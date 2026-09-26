@@ -1,0 +1,15 @@
+IBAN Registry is a simple offline app for keeping IBAN bank account details
+organized on your Android device.
+
+Features:
+
+* Add an IBAN with a useful description
+* Validate country-specific IBAN length and checksum
+* Reject duplicate accounts
+* Search by IBAN or description
+* Edit and delete saved accounts
+* Copy an IBAN to the system clipboard
+
+All records remain in the app's private on-device database. The app has no
+network permission, analytics, advertising, tracking, or bank integrations.
+Android backup is disabled so saved IBANs are not included in device backups.

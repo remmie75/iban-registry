@@ -1,0 +1,21 @@
+Categories:
+  - Money
+License: MIT
+SourceCode: https://github.com/remmie75/iban-registry
+IssueTracker: https://github.com/remmie75/iban-registry/issues
+
+RepoType: git
+Repo: https://github.com/remmie75/iban-registry.git
+
+Builds:
+  - versionName: '1.0'
+    versionCode: 1
+    commit: v1.0
+    subdir: .
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: '1.0'
+CurrentVersionCode: 1

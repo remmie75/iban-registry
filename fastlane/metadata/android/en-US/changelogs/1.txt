@@ -1,0 +1,2 @@
+Initial release with local account storage, IBAN validation, search, editing,
+deletion, and clipboard support.
