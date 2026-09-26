@@ -1,0 +1,2 @@
+Add complete F-Droid listing metadata and graphics, use the permanent
+application ID, and disable Android backup for stored IBAN data.

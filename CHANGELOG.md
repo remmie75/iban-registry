@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+- Add complete F-Droid listing metadata and graphics.
+- Use the permanent application ID `io.github.remmie75.ibanregistry`.
+- Disable Android backup for stored IBAN data.
+
 ## 1.0
 
 - Register IBAN bank accounts with descriptions.

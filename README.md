@@ -60,11 +60,9 @@ Before submitting the app to the official F-Droid repository:
 1. Publish this project in a public Git repository.
 2. Replace the placeholder repository URLs and commit in
    `docs/fdroiddata-template.yml`.
-3. Tag the release commit as `v1.0`; each future release must increment
+3. Tag each release (the current release is `v1.0.1`); every future release must increment
    `versionCode` and have a corresponding changelog file.
-4. Add real phone screenshots under
-   `fastlane/metadata/android/en-US/images/phoneScreenshots`.
-5. Copy the template to `metadata/io.github.remmie75.ibanregistry.yml` in a fork of
+4. Copy the template to `metadata/io.github.remmie75.ibanregistry.yml` in a fork of
    `fdroiddata`, run `fdroid lint`, and submit it as a merge request.
 
 F-Droid builds and signs its own APK from the tagged source. Verify the same
