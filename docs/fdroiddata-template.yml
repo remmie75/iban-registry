@@ -1,5 +1,5 @@
 Categories:
-  - Money
+  - Finance Manager
 License: MIT
 SourceCode: https://github.com/remmie75/iban-registry
 IssueTracker: https://github.com/remmie75/iban-registry/issues
@@ -10,12 +10,11 @@ Repo: https://github.com/remmie75/iban-registry.git
 Builds:
   - versionName: 1.0.1
     versionCode: 2
-    commit: v1.0.1
-    subdir: .
+    commit: e3e6c835dfd0fe21d218c997568a7cca26c8c960
     gradle:
       - yes
 
-AutoUpdateMode: Version
+AutoUpdateMode: Version v%v
 UpdateCheckMode: Tags
 CurrentVersion: 1.0.1
 CurrentVersionCode: 2
