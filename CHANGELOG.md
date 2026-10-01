@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Export and import a versioned JSON backup through Android's document picker.
+- Organize accounts with folders and tags.
+- Manually rearrange the account list.
+
 ## 1.0.1
 
 - Add complete F-Droid listing metadata and graphics.

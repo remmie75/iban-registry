@@ -6,4 +6,4 @@ build/
 captures/
 .externalNativeBuild/
 .cxx/
-app/build/
+ibanlist/build/

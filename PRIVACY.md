@@ -22,6 +22,11 @@ When the user chooses **Copy IBAN**, the selected IBAN is placed on Android's
 system clipboard. Other software with clipboard access may be able to read it,
 subject to Android's platform protections.
 
+When the user exports a backup, the app writes all saved account information
+to the document location selected by the user. Backup files are readable JSON
+and are not encrypted. Import reads only the document explicitly selected by
+the user.
+
 ## Storage and deletion
 
 Android stores the database in the app's private storage. Android backup is

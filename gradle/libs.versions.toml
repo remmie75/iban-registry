@@ -1,6 +1,6 @@
 [versions]
-agp = "8.13.2"
-kotlin = "2.1.0"
+agp = "9.4.1"
+kotlin = "2.2.10"
 coreKtx = "1.15.0"
 lifecycle = "2.8.7"
 activityCompose = "1.10.1"
@@ -9,6 +9,7 @@ room = "2.7.0"
 composeBom = "2025.04.01"
 coroutines = "1.10.1"
 junit = "4.13.2"
+json = "20250517"
 androidxJunit = "1.2.1"
 espresso = "3.6.1"
 
@@ -33,6 +34,7 @@ androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-
 androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+json = { group = "org.json", name = "json", version.ref = "json" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 

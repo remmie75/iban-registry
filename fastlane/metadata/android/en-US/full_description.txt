@@ -7,6 +7,9 @@ Features:
 * Validate country-specific IBAN length and checksum
 * Reject duplicate accounts
 * Search by IBAN or description
+* Organize accounts with folders and tags
+* Rearrange accounts in a custom order
+* Export and import backups with Android's document picker
 * Edit and delete saved accounts
 * Copy an IBAN to the system clipboard
 

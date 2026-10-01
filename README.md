@@ -6,6 +6,9 @@ An offline-first Android app for registering IBAN bank accounts with a descripti
 
 - Add, edit, and delete bank accounts
 - Search by description or IBAN
+- Organize accounts with folders and tags
+- Rearrange accounts in a custom order
+- Export and import versioned JSON backups
 - Copy an IBAN to the clipboard
 - Validate country-specific IBAN lengths and ISO 13616 modulo-97 checksums
 - Reject duplicate IBANs after normalizing case and whitespace
@@ -48,6 +51,9 @@ Accounts are stored only in the app-private Room database. The app does not requ
 permissions, contact banks, read balances, or initiate payments. Full IBAN values are not
 logged. Android backup is disabled so stored IBANs are not copied into device backups. See
 [PRIVACY.md](PRIVACY.md) for the complete privacy policy.
+
+Manual backups use Android's document picker and contain IBANs, descriptions, folders, tags,
+and list order as readable JSON. Store exported files somewhere private.
 
 ## F-Droid publishing
 
