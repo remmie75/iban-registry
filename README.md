@@ -10,6 +10,7 @@ An offline-first Android app for registering IBAN bank accounts with a descripti
 - Rearrange accounts in a custom order
 - Export and import versioned JSON backups
 - Optionally lock the app at startup with a PIN and strong device biometrics
+- Choose a readable light, dark, or playful surprise color scheme
 - Copy an IBAN to the clipboard
 - Validate country-specific IBAN lengths and ISO 13616 modulo-97 checksums
 - Reject duplicate IBANs after normalizing case and whitespace

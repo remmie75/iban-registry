@@ -6,6 +6,7 @@
 - Organize accounts with folders and tags.
 - Manually rearrange the account list.
 - Optionally protect app access with a PIN and strong device biometrics.
+- Choose between persistent light, dark, and surprise color schemes.
 
 ## 1.0.1
 

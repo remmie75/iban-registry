@@ -6,10 +6,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.fragment.app.FragmentActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
@@ -23,10 +25,12 @@ import com.example.ibanregistry.security.AppLockViewModel
 import com.example.ibanregistry.ui.AccountListScreen
 import com.example.ibanregistry.ui.AppLockScreen
 import com.example.ibanregistry.ui.AccountListViewModel
+import com.example.ibanregistry.ui.AppearanceSettingsScreen
 import com.example.ibanregistry.ui.BankAccountFormScreen
 import com.example.ibanregistry.ui.BankAccountFormViewModel
 import com.example.ibanregistry.ui.SecuritySettingsScreen
 import com.example.ibanregistry.ui.theme.IbanRegistryTheme
+import com.example.ibanregistry.ui.theme.AppTheme
 
 class MainActivity : FragmentActivity() {
     private var appLockViewModel: AppLockViewModel? = null
@@ -36,7 +40,15 @@ class MainActivity : FragmentActivity() {
         enableEdgeToEdge()
         val container = (application as IbanRegistryApplication).container
         setContent {
-            IbanRegistryTheme {
+            val appTheme by container.appearancePreferences.theme.collectAsStateWithLifecycle()
+            SideEffect {
+                val useDarkSystemIcons = appTheme != AppTheme.DARK
+                WindowCompat.getInsetsController(window, window.decorView).apply {
+                    isAppearanceLightStatusBars = useDarkSystemIcons
+                    isAppearanceLightNavigationBars = useDarkSystemIcons
+                }
+            }
+            IbanRegistryTheme(appTheme = appTheme) {
                 val lockViewModel: AppLockViewModel = viewModel(
                     factory = AppLockViewModel.factory(container.appLockManager),
                 )
@@ -45,6 +57,8 @@ class MainActivity : FragmentActivity() {
                     repository = container.bankAccountRepository,
                     appLockManager = container.appLockManager,
                     appLockViewModel = lockViewModel,
+                    appTheme = appTheme,
+                    onThemeSelected = container.appearancePreferences::setTheme,
                 )
             }
         }
@@ -82,6 +96,8 @@ private fun MainActivity.SecureIbanRegistryApp(
     repository: BankAccountRepository,
     appLockManager: AppLockManager,
     appLockViewModel: AppLockViewModel,
+    appTheme: AppTheme,
+    onThemeSelected: (AppTheme) -> Unit,
 ) {
     val isUnlocked by appLockViewModel.isUnlocked.collectAsStateWithLifecycle()
     val biometricAvailable = remember {
@@ -105,6 +121,8 @@ private fun MainActivity.SecureIbanRegistryApp(
             appLockManager = appLockManager,
             biometricAvailable = biometricAvailable,
             onSecurityChanged = appLockViewModel::refreshAfterSettingsChange,
+            appTheme = appTheme,
+            onThemeSelected = onThemeSelected,
         )
     }
 }
@@ -115,6 +133,8 @@ private fun IbanRegistryApp(
     appLockManager: AppLockManager,
     biometricAvailable: Boolean,
     onSecurityChanged: () -> Unit,
+    appTheme: AppTheme,
+    onThemeSelected: (AppTheme) -> Unit,
 ) {
     val navController = rememberNavController()
 
@@ -128,6 +148,14 @@ private fun IbanRegistryApp(
                 onAdd = { navController.navigate("account/new") },
                 onEdit = { id -> navController.navigate("account/$id") },
                 onSecurity = { navController.navigate("security") },
+                onAppearance = { navController.navigate("appearance") },
+            )
+        }
+        composable("appearance") {
+            AppearanceSettingsScreen(
+                selectedTheme = appTheme,
+                onThemeSelected = onThemeSelected,
+                onBack = { navController.popBackStack() },
             )
         }
         composable("security") {

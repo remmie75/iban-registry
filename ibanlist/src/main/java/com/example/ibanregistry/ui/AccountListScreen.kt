@@ -30,6 +30,7 @@ import androidx.compose.material.icons.filled.FileUpload
 import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Security
 import androidx.compose.material3.AlertDialog
@@ -79,6 +80,7 @@ fun AccountListScreen(
     onAdd: () -> Unit,
     onEdit: (Long) -> Unit,
     onSecurity: () -> Unit,
+    onAppearance: () -> Unit,
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -166,6 +168,12 @@ fun AccountListScreen(
             TopAppBar(
                 title = { Text(stringResource(R.string.accounts_title)) },
                 actions = {
+                    IconButton(onClick = onAppearance) {
+                        Icon(
+                            Icons.Default.Palette,
+                            contentDescription = stringResource(R.string.appearance_title),
+                        )
+                    }
                     IconButton(onClick = onSecurity) {
                         Icon(
                             Icons.Default.Security,

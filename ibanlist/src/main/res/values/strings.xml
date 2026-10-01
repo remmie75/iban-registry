@@ -69,4 +69,11 @@
     <string name="biometric_prompt_title">Unlock IBAN Registry</string>
     <string name="biometric_prompt_subtitle">Confirm your identity to view saved accounts</string>
     <string name="use_pin">Use PIN</string>
+    <string name="appearance_title">Appearance</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_light_description">A clean blue theme for bright environments.</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_dark_description">A high-contrast theme that is easy on the eyes.</string>
+    <string name="theme_surprise">Surprise me</string>
+    <string name="theme_surprise_description">A playful plum, teal, and warm cream palette.</string>
 </resources>
