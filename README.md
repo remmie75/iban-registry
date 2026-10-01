@@ -9,6 +9,7 @@ An offline-first Android app for registering IBAN bank accounts with a descripti
 - Organize accounts with folders and tags
 - Rearrange accounts in a custom order
 - Export and import versioned JSON backups
+- Optionally lock the app at startup with a PIN and strong device biometrics
 - Copy an IBAN to the clipboard
 - Validate country-specific IBAN lengths and ISO 13616 modulo-97 checksums
 - Reject duplicate IBANs after normalizing case and whitespace
@@ -24,7 +25,7 @@ An offline-first Android app for registering IBAN bank accounts with a descripti
 
 1. Open this directory in Android Studio.
 2. Allow Gradle sync to finish.
-3. Select the `app` run configuration and an Android device.
+3. Select the `ibanlist` run configuration and an Android device.
 4. Run the app.
 
 From a terminal with `JAVA_HOME` and the Android SDK configured:
@@ -54,6 +55,10 @@ logged. Android backup is disabled so stored IBANs are not copied into device ba
 
 Manual backups use Android's document picker and contain IBANs, descriptions, folders, tags,
 and list order as readable JSON. Store exported files somewhere private.
+
+The optional startup lock stores only a salted PBKDF2 hash of the PIN. Biometric
+authentication is handled by Android and no fingerprint or biometric data is available to
+the app. The lock protects access through the app UI; it does not encrypt exported backups.
 
 ## F-Droid publishing
 

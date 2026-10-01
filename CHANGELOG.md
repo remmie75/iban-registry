@@ -5,6 +5,7 @@
 - Export and import a versioned JSON backup through Android's document picker.
 - Organize accounts with folders and tags.
 - Manually rearrange the account list.
+- Optionally protect app access with a PIN and strong device biometrics.
 
 ## 1.0.1
 

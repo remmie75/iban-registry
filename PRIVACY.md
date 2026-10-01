@@ -24,6 +24,11 @@ subject to Android's platform protections.
 
 When the user exports a backup, the app writes all saved account information
 to the document location selected by the user. Backup files are readable JSON
+
+If startup security is enabled, the app stores a salted, one-way hash of the
+user's PIN in app-private preferences. The original PIN cannot be recovered
+from that value. Fingerprint and other biometric checks are performed by
+Android; the app never receives or stores biometric data. Backup files are readable JSON
 and are not encrypted. Import reads only the document explicitly selected by
 the user.
 

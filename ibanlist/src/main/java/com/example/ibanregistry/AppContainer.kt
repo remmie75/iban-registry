@@ -5,8 +5,11 @@ import androidx.room.Room
 import com.example.ibanregistry.data.local.AppDatabase
 import com.example.ibanregistry.data.repository.LocalBankAccountRepository
 import com.example.ibanregistry.domain.BankAccountRepository
+import com.example.ibanregistry.security.AppLockManager
 
 class AppContainer(context: Context) {
+    val appLockManager = AppLockManager(context)
+
     private val database = Room.databaseBuilder(
         context,
         AppDatabase::class.java,

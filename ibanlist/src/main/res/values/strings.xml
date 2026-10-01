@@ -48,4 +48,25 @@
     <string name="move_up">Move up</string>
     <string name="move_down">Move down</string>
     <string name="reorder_failed">Could not rearrange the account</string>
+    <string name="security_title">Security</string>
+    <string name="startup_lock_enabled">Startup lock is enabled.</string>
+    <string name="startup_lock_disabled">Protect the app with a PIN when it starts or leaves the foreground.</string>
+    <string name="pin_label">PIN</string>
+    <string name="new_pin_label">New PIN</string>
+    <string name="confirm_pin_label">Confirm PIN</string>
+    <string name="pin_requirements">Use 4 to 8 digits.</string>
+    <string name="pin_mismatch">PINs do not match.</string>
+    <string name="enable_startup_lock">Enable startup lock</string>
+    <string name="change_pin">Change PIN</string>
+    <string name="disable_startup_lock">Disable startup lock</string>
+    <string name="biometric_unlock">Fingerprint or biometric unlock</string>
+    <string name="biometric_description">Use a strong biometric enrolled on this device. Your PIN remains available as a fallback.</string>
+    <string name="biometric_unavailable">No strong biometric is enrolled on this device.</string>
+    <string name="unlock_title">Unlock IBAN Registry</string>
+    <string name="incorrect_pin">Incorrect PIN</string>
+    <string name="unlock">Unlock</string>
+    <string name="use_biometrics">Use fingerprint or biometrics</string>
+    <string name="biometric_prompt_title">Unlock IBAN Registry</string>
+    <string name="biometric_prompt_subtitle">Confirm your identity to view saved accounts</string>
+    <string name="use_pin">Use PIN</string>
 </resources>
