@@ -36,7 +36,7 @@ object BankAccountBackupCodec {
         try {
             val root = JSONObject(content)
             val schemaVersion = root.getInt("schemaVersion")
-            if (schemaVersion !in 1..SCHEMA_VERSION) {
+            if ((schemaVersion < 1) || (schemaVersion > SCHEMA_VERSION)) {
                 throw BackupFormatException("Unsupported backup version")
             }
             val entries = root.getJSONArray("accounts")
@@ -65,15 +65,15 @@ object BankAccountBackupCodec {
                     if (!IbanValidator.isValid(iban)) {
                         throw BackupFormatException("Account ${index + 1} has an invalid IBAN")
                     }
-                    if (description.isEmpty() || description.length > MAX_DESCRIPTION_LENGTH) {
+                    if (description.isEmpty() || (description.length > MAX_DESCRIPTION_LENGTH)) {
                         throw BackupFormatException("Account ${index + 1} has an invalid description")
                     }
-                    if (folder != null && folder.length > 50) {
+                    if ((folder != null) && (folder.length > 50)) {
                         throw BackupFormatException("Account ${index + 1} has an invalid folder")
                     }
                     if (
                         tags.size > 10 ||
-                        tags.any { it.isEmpty() || it.length > 30 } ||
+                        tags.any { it.isEmpty() || (it.length > 30) } ||
                         tags.distinctBy(String::lowercase).size != tags.size
                     ) {
                         throw BackupFormatException("Account ${index + 1} has invalid tags")

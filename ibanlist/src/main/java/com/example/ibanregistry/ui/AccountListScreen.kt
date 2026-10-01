@@ -99,7 +99,7 @@ fun AccountListScreen(
     ) { uri ->
         val content = pendingBackup
         pendingBackup = null
-        if (uri != null && content != null) {
+        if ((uri != null) && (content != null)) {
             coroutineScope.launch {
                 val exported = withContext(Dispatchers.IO) {
                     writeBackup(context, uri, content)
@@ -340,7 +340,7 @@ fun AccountListScreen(
 
 private fun writeBackup(context: Context, uri: Uri, content: String): Boolean =
     try {
-        context.contentResolver.openOutputStream(uri, "wt")?.use { output ->
+        context.contentResolver.openOutputStream(uri, "w")?.use { output ->
             output.write(content.toByteArray(Charsets.UTF_8))
         } != null
     } catch (_: IOException) {

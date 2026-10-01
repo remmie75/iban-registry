@@ -110,7 +110,7 @@ class BankAccountFormViewModel(
             .split(",")
             .map(String::trim)
             .filter(String::isNotEmpty)
-        val tagsError = rawTags.size > MAX_TAGS || rawTags.any { it.length > MAX_TAG_LENGTH }
+        val tagsError = (rawTags.size > MAX_TAGS) || rawTags.any { it.length > MAX_TAG_LENGTH }
         val tags = rawTags
             .distinctBy(String::lowercase)
         val descriptionError = when {
